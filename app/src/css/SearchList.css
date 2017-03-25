@@ -1,0 +1,52 @@
+.search-res{
+	flex: 1;
+}
+
+.search-header{
+	height:40px;
+	line-height: 40px;
+	margin:5px 0 10px;
+	font-weight: bold;
+	border-bottom: 2px #ddd solid
+}
+
+.search-header li{
+	line-height: 40px
+}
+
+.search-content .search-item{
+	margin-bottom: 0;
+	height: 36px;
+	padding-left: 10px;
+	line-height: 36px;
+}
+
+.search-content .search-item:hover{
+	background: #f4f7fa;
+	cursor: pointer;
+}
+
+.search-content .search-item li{
+	line-height: 36px;
+	user-select:none;
+}
+
+.search-content .input-control{
+	height:auto;
+	min-height: auto;
+	line-height: 0
+}
+
+.search-content .input-control .check{
+	width:.8rem;
+	height: .8rem;
+}
+
+.pagination{
+	margin-top: 2rem;
+	text-align: center;
+}
+
+.pagination .button{
+	display: inline;
+}

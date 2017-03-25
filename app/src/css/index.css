@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color:#666;
+}
+
+input{
+	color:#666;
+}
+
+ul{
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+
+.show{
+	display: block!important;
+}
+
+.hide{
+	display: none!important;
+}

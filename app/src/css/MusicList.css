@@ -1,0 +1,59 @@
+.music-list{
+	width:275px;
+	padding:5px;
+}
+
+.m-items{
+	padding:5px 10px;
+}
+
+.m-header{
+	height:32px;
+	line-height: 32px;
+	cursor:pointer;
+	border-bottom: 1px #ccc dashed;
+}
+
+.m-header.active{
+	color:#2d79d1;
+}
+
+.m-header span{
+	font-size: 15px;
+}
+
+.m-header button{
+	text-align: left;
+}
+
+.m-content{
+	padding:5px 0;
+}
+
+.m-content li{
+	padding:0 10px;
+	height: 36px;
+	line-height: 36px;
+	overflow: hidden;
+	cursor: pointer;
+	color: #9e9e9e;
+	user-select:none;
+}
+
+.m-content li span{
+	margin-right: 5px;
+	color:#bbbbbb;
+}
+
+.m-content li:hover{
+	background:#f4f7fa;
+}
+
+.m-content li.active{
+	padding-left: 20px;
+}
+
+.m-content li.active,.m-content li.active span{
+	color:#2d79d1;
+}
+

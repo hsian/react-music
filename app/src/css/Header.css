@@ -1,0 +1,39 @@
+header{
+	padding:1.25rem 20px;
+	margin:0!important;
+	background: #0072c6;
+}
+
+.search-sort{
+	position: relative;
+	background:#fff;
+	z-index: 999;
+}
+
+.search-sort h4{
+	height:40px;
+	margin:0;
+	line-height: 40px;
+	font-size: 14px;
+	font-weight: bold;
+	border-bottom: 1px dashed #eee;
+}
+
+.search-sort .search-sort-list{
+	border:1px #eee solid;
+	padding:0 10px 5px;
+}
+
+.search-sort ul li a{
+	display: block;
+	padding-left: 5px;
+	height: 32px;
+	line-height: 32px;
+	font-size: 14px;
+	color: #666;
+}
+
+.search-sort ul li a:hover{
+	background:#f7f7f7;
+	color: #2d79d1;
+}
