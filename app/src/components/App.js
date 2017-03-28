@@ -6,9 +6,11 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      currentMusic : {}
+      currentMusic : {},
+      playMusics : {}
     };
     this.setCurrentMusic = this.setCurrentMusic.bind(this);
+    this.setPlayMusics = this.setPlayMusics.bind(this)
   }
 
   setCurrentMusic(single){
@@ -17,11 +19,27 @@ class App extends Component {
       })
   }
 
+  setPlayMusics(object){
+    this.setState({
+      playMusics : object
+    })
+  }
+
   render(){
     return(
       <div className="main">
-        <Main currentMusic={this.state.currentMusic} setCurrentMusic={this.setCurrentMusic}/>
-        <Player currentMusic={this.state.currentMusic}/>
+        <Main 
+          currentMusic={this.state.currentMusic} 
+          setCurrentMusic={this.setCurrentMusic}
+          playMusics={this.state.playMusics}
+          setPlayMusics={this.setPlayMusics}
+        />
+        <Player 
+          currentMusic={this.state.currentMusic} 
+          setCurrentMusic={this.setCurrentMusic}
+          playMusics={this.state.playMusics}
+          setPlayMusics={this.setPlayMusics}
+        />
       </div>
     );
   }

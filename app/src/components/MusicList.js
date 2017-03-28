@@ -11,8 +11,6 @@ class MusicItem extends Component {
 		var mid = e.target.getAttribute("data-mid");
 		var musics = this.props.playMusics;
 
-		console.log(musics)
-
 		if(musics[mid]){
 			this.props.setCurrentMusic(musics[mid]);
 		}
@@ -22,10 +20,9 @@ class MusicItem extends Component {
 		var music = this.props.music;
 		var currentMusic = this.props.currentMusic;
 		var active = currentMusic.songmid === music.songmid;
-
 		var liClassName = active ? "active" : "";
 		var spanClassName = active ? "mif-play" : "mif-music";
-
+		
 		return (
 			<li data-mid={music.songmid} className={liClassName} onDoubleClick={this.handlePlayNow}>
 				<span className={spanClassName} data-mid={music.songmid}></span>
@@ -36,10 +33,6 @@ class MusicItem extends Component {
 }
 
 class MusicList extends Component {
-	constructor(props){
-		super(props);
-	}
-
 	render(){
 		var musics = this.props.playMusics;
 		var musicsComponents = [];

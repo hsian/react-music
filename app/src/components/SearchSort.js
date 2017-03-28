@@ -7,7 +7,6 @@ class SearchSortItem extends Component{
 	}
 
 	handleSearchSortItem(e){
-		console.log(e.target.innerHTML)
 		this.props.filterText(e.target.innerHTML)
 	}
 
@@ -20,16 +19,12 @@ class SearchSortItem extends Component{
 		}
 
 		return (
-			<li><a href="javascript:;" onClick={handleSearchSortItem}>{data.name} - {data.singer}</a></li>
+			<li onClick={handleSearchSortItem}>{data.name} - {data.singer}</li>
 		);
 	}
 }
 
 class SearchSort extends Component{
-	constructor(props){
-		super(props);
-	}
-
 	render(){
 		var arrayLis = [];
 		var itemList = this.props.data.itemlist;

@@ -9,11 +9,16 @@ class SearchListItem extends Component{
 	}
 
 	handleAddPlayMusic(e){
-		var parent = e.target.parentNode;
-		var mid = parent.getAttribute("data-mid");
-		var songname = parent.getAttribute("data-songname");
-		var promise = playInfo(mid);
 		var self = this;
+		var music = self.props.music;
+		var mid = music.songmid;
+		var songname = music.songname + " - " + music.singer[0].name;
+		var promise = playInfo(mid);
+
+		/*if(self.props.music["alertid"] === 0){
+			alert("该资源已下架");
+			return;
+		}*/
 
 		promise.then(function(data){
 			var item = data.data.items[0] || {};
@@ -31,17 +36,19 @@ class SearchListItem extends Component{
 	}
 
 	render(){
+		var music = this.props.music;
+
 		return (
-			<ul className="search-item row" onDoubleClick={this.handleAddPlayMusic} data-mid={this.props.music.songmid} data-songname={this.props.music.songname + "-" + this.props.music.singer[0].name}>
+			<ul className="search-item row" onDoubleClick={this.handleAddPlayMusic} data-mid={music.songmid} data-songname={music.songname + "-" + music.singer[0].name}>
 				<li className="cell colspan1">
 					<label className="input-control checkbox small-check">
                 		<input type="checkbox"/>
                 		<span className="check"></span>
             		</label>
             	</li>
-				<li className="cell colspan4">{this.props.music.songname}</li>
-				<li className="cell colspan3">{this.props.music.singer[0].name}</li>
-				<li className="cell colspan4">{this.props.music.albumname}</li>
+				<li className="cell colspan4">{music.songname}</li>
+				<li className="cell colspan3">{music.singer[0].name}</li>
+				<li className="cell colspan4">{music.albumname}</li>
 			</ul>
 		)
 	}

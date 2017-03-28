@@ -4,7 +4,6 @@ import '../css/App.css';
 import Header from "./Header"
 import MusicList from "./MusicList"
 import SearchList from "./SearchList"
-import Player from "./Player"
 
 class Main extends Component {
 
@@ -12,12 +11,10 @@ class Main extends Component {
     super(props)
     this.state = {
       musics : [],
-      pageNow : 0,
-      playMusics : {},
+      pageNow : 0
     }
     this.setMusics = this.setMusics.bind(this)
     this.setPageNow = this.setPageNow.bind(this)
-    this.setPlayMusics = this.setPlayMusics.bind(this)
   }
 
   setMusics(array){
@@ -32,14 +29,7 @@ class Main extends Component {
     })
   }
 
-  setPlayMusics(object){
-    this.setState({
-      playMusics : object
-    })
-  }
-
   render() {
-
     return (
       <div className="App">
         <Header 
@@ -49,16 +39,17 @@ class Main extends Component {
         <div className="content flex-grid">
           <div className="row">
             <MusicList
-              playMusics={this.state.playMusics}
+              playMusics={this.props.playMusics}
               currentMusic={this.props.currentMusic}
               setCurrentMusic={this.props.setCurrentMusic}
+              setPlayMusics={this.props.setPlayMusics}
             />
             <SearchList 
               musics={this.state.musics} 
               pageNow={this.state.pageNow}
               setPageNow={this.setPageNow}
-              playMusics={this.state.playMusics}
-              setPlayMusics={this.setPlayMusics}
+              playMusics={this.props.playMusics}
+              setPlayMusics={this.props.setPlayMusics}
               setCurrentMusic={this.props.setCurrentMusic}
             />
           </div> 
